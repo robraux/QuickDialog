@@ -100,7 +100,8 @@
     QDateTimeInlineElement *dateElement = ((QDateTimeInlineElement *) element);
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    
     if (element.customDateFormat!=nil){
         dateFormatter.dateFormat = element.customDateFormat;
     } else {

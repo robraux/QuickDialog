@@ -67,6 +67,7 @@
 {
     if (self.mode == UIDatePickerModeDate)   {
         NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+        [gregorian setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
         NSDateComponents *dateComponents = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:_dateValue];
         _dateValue = [gregorian dateFromComponents:dateComponents];
     }
