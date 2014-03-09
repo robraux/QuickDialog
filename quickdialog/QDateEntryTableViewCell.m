@@ -54,7 +54,7 @@
     if (!_pickerView)
         _pickerView = [[UIDatePicker alloc] init];
 
-    _pickerView.timeZone = [NSTimeZone localTimeZone];
+    _pickerView.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     [_pickerView sizeToFit];
     [_pickerView addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
     _pickerView.datePickerMode = element.mode;
