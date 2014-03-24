@@ -37,7 +37,7 @@
     if (!self.pickerView)
         self.pickerView = [[UIDatePicker alloc] init];
 
-    self.pickerView.timeZone = [NSTimeZone localTimeZone];
+    self.pickerView.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     [self.pickerView sizeToFit];
     self.pickerView.datePickerMode = element.mode;
     self.pickerView.maximumDate = element.maximumDate;
